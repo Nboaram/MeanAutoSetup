@@ -23,7 +23,7 @@ git checkout Developer
 sudo systemctl daemon-reload
 sudo systemctl enable api
 sudo systemctl start api
-cd /TeamAPoolProjectUI
+cd ~/TeamAPoolProjectUI
 git checkout Developer
 sudo systemctl daemon-reload
 sudo systemctl enable angular
