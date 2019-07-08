@@ -15,7 +15,15 @@ npm install --save-dev @angular-devkit/build-angular
 npm install --save bootstrap
 npm install --save cors
 sudo cp angular.service /etc/systemd/system/angular.service
+sudo cp api.service /etc/systemd/system/api.service
 cd /TeamAPoolProjectBackend
+git checkout Developer 
+sudo systemctl daemon-reload
+sudo systemctl enable api
+sudo systemctl start api
 cd /TeamAPoolProjectUI
 git checkout Developer
+sudo systemctl daemon-reload
+sudo systemctl enable angular
+sudo systemctl start angular
 ng serve
