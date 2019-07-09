@@ -34,8 +34,8 @@ echo
 echo ////////////////////////////////////////////////////////////////
 echo            Setting up Services
 echo ////////////////////////////////////////////////////////////////
-sudo cp angular.service /etc/systemd/system/angular.service
-sudo cp api.service /etc/systemd/system/api.service
+sudo cp ~/MeanAutoSetup/angular.service /etc/systemd/system/angular.service
+sudo cp ~/MeanAutoSetup/api.service /etc/systemd/system/api.service
 echo
 echo
 echo ////////////////////////////////////////////////////////////////
