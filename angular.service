@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/TeamAPoolProjectUI/
+WorkingDirectory=/home/nboaram1/TeamAPoolProjectUI/
 ExecStart=/usr/bin/ng serve --host 0.0.0.0
 Restart=on-failure
 RestartSec=10
