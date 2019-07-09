@@ -55,6 +55,7 @@ echo ////////////////////////////////////////////////////////////////
 cd ~/TeamAPoolProjectUI
 sudo git checkout Developer
 sudo npm install -y
+yes | sudo npm -g install --save @angular/cli
 sudo systemctl daemon-reload
 sudo systemctl enable angular
 sudo systemctl start angular
