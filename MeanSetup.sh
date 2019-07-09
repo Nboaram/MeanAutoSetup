@@ -42,8 +42,8 @@ echo ////////////////////////////////////////////////////////////////
 echo            Starting API
 echo ////////////////////////////////////////////////////////////////
 cd ~/TeamAPoolProjectBackend
-sudo npm install
-git checkout Developer 
+sudo git checkout Developer 
+sudo npm install -y
 sudo systemctl daemon-reload
 sudo systemctl enable api
 sudo systemctl start api
@@ -53,8 +53,8 @@ echo ////////////////////////////////////////////////////////////////
 echo            Starting Angular
 echo ////////////////////////////////////////////////////////////////
 cd ~/TeamAPoolProjectUI
-sudo npm install
-git checkout Developer
+sudo git checkout Developer
+sudo npm install -y
 sudo systemctl daemon-reload
 sudo systemctl enable angular
 sudo systemctl start angular
