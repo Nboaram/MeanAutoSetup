@@ -1,42 +1,59 @@
 !#/bin/bash
 cd
 echo ////////////////////////////////////////////////////////////////
-echo
 echo            Git Cloning Backend
-echo
 echo ////////////////////////////////////////////////////////////////
 sudo git clone https://github.com/Nboaram/TeamAPoolProjectBackend.git
+echo
+echo
 echo ////////////////////////////////////////////////////////////////
-echo
 echo            Git Cloning Frontend
-echo
 echo ////////////////////////////////////////////////////////////////
 sudo git clone https://github.com/Nboaram/TeamAPoolProjectUI.git
+echo
+echo
+echo ////////////////////////////////////////////////////////////////
+echo            Mongo
+echo ////////////////////////////////////////////////////////////////
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 sudo service mongod start
+echo
+echo
+echo ////////////////////////////////////////////////////////////////
+echo            Node.JS
+echo ////////////////////////////////////////////////////////////////
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 sudo npm init -y
-sudo npm install --save mongoose
-sudo npm install --save express
-yes | sudo npm install -g @angular/cli
-sudo npm install --save-dev @angular-devkit/build-angular
-sudo npm install --save jquery
-sudo npm install --save popper.
-sudo npm install --save bootstrap
-sudo npm install --save cors
+echo
+echo
+echo ////////////////////////////////////////////////////////////////
+echo            Setting up Services
+echo ////////////////////////////////////////////////////////////////
 sudo cp angular.service /etc/systemd/system/angular.service
 sudo cp api.service /etc/systemd/system/api.service
+echo
+echo
+echo ////////////////////////////////////////////////////////////////
+echo            Starting API
+echo ////////////////////////////////////////////////////////////////
 cd ~/TeamAPoolProjectBackend
+sudo npm install
 git checkout Developer 
 sudo systemctl daemon-reload
 sudo systemctl enable api
 sudo systemctl start api
+echo
+echo
+echo ////////////////////////////////////////////////////////////////
+echo            Starting Angular
+echo ////////////////////////////////////////////////////////////////
 cd ~/TeamAPoolProjectUI
+sudo npm install
 git checkout Developer
 sudo systemctl daemon-reload
 sudo systemctl enable angular
