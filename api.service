@@ -1,12 +1,12 @@
-Description=api
+[Unit]
+Description=Api
 
 Wants=network.target
 After=syslog.target network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/TeamAPoolProjectUI/
-ExecStart=/usr/bin/node Index.js
+ExecStart=/usr/bin/node /home/nboaram1/TeamAPoolProjectBackend/Index.js
 Restart=on-failure
 RestartSec=10
 KillMode=process
