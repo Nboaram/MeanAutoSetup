@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/node /home/nboaram1/TeamAPoolProjectBackend/Index.js
+ExecStart=/usr/bin/node /home/terraform/TeamAPoolProjectBackend/Index.js
 Restart=on-failure
 RestartSec=10
 KillMode=process
